@@ -4,7 +4,7 @@
 #
 # 강의 시간에 실습한 Linux 명령어를 활용하세요.
 def get_current_path_command():
-    raise NotImplementedError
+    return "pwd"
 
 
 # 문제 2.
@@ -21,7 +21,10 @@ def get_current_path_command():
 #
 # 강의 시간에 사용한 옵션을 활용하세요.
 def make_list_command(hidden):
-    raise NotImplementedError
+    if hidden:
+        return "ls -al"
+    else:
+        return "ls"
 
 
 # 문제 3.
@@ -30,7 +33,9 @@ def make_list_command(hidden):
 #
 # path 인자는 이동할 디렉토리 경로입니다.
 def make_change_directory_command(path):
-    raise NotImplementedError
+    cmd = "cd " + path
+    return cmd
+    # raise NotImplementedError
 
 
 # 문제 4.
@@ -41,7 +46,8 @@ def make_change_directory_command(path):
 #
 # 강의 중 확인한 U-Boot 명령어를 활용하세요.
 def make_printenv_command(env_name):
-    raise NotImplementedError
+    cmd = "printenv " + env_name
+    return cmd
 
 
 # 문제 5.
@@ -59,4 +65,6 @@ def make_printenv_command(env_name):
 #
 # 강의 중 실습한 bootargs 형식을 참고하세요.
 def make_bootargs_command(console, rootfs):
-    raise NotImplementedError
+    cmd = f'setenv bootargs "console={console} root={rootfs} rw"'
+    return cmd
+    # raise NotImplementedError
